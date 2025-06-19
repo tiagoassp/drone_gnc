@@ -1,0 +1,13 @@
+.vscode
+package.xml
+CMakeLists.txt
+models/cube
+plugins/source/notes.txt
+moon.world
+titan.world
+titan.sdf
+moon.sdf
+titan.dae
+moon.dae
+Textures/
+drone/

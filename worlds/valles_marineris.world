@@ -1,0 +1,54 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 1000 0 -0 0</pose>
+      
+      <!-- Adjusted diffuse color for Martian sunlight -->
+      <diffuse>1 0.70 0.40 1</diffuse>  <!-- A warmer, reddish hue -->
+      
+      <!-- Adjusted specular light for Mars -->
+      <specular>0.1 0.1 0.1 1</specular>  <!-- Reduced specular highlights for a less shiny surface -->
+      
+      <attenuation>
+          <range>1000</range>  <!-- This can stay the same or be increased if needed -->
+          <constant>0.5</constant>  <!-- Slightly higher to simulate less atmosphere -->
+          <linear>0.02</linear>  <!-- A bit higher for the linear component -->
+          <quadratic>0.001</quadratic>  <!-- This can stay the same -->
+      </attenuation>
+      
+      <!-- Direction adjusted to simulate the lower sun angle on Mars -->
+      <direction>-0.6 -0.6 -0.8</direction> <!-- Adjusted direction for different sunlight angle -->
+    </light>
+
+
+    <include>
+      <name>valles_marineris</name>
+      <uri>model://maps</uri>
+      <pose>0 0 -200 0 0 0</pose>
+    </include>
+
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <gravity>0 0 -3.73</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+
+    <atmosphere type='adiabatic'>
+      <temperature>-65.0</temperature>
+      <pressure>0.61</pressure>
+    </atmosphere>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''> 0.0 0.0 0.0 0.0 0.0 90.0</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui> 
+
+  </world>
+</sdf>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="valles_marineris">
+  <pose>0 0 0 0 0 0 </pose>
+    <static>true</static>
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh> <uri>model://maps/media/valles_marineris.dae</uri></mesh>
+        </geometry>
+        <material name="my_material">
+        <texture>
+          <uri>file://maps/media/Textures/rocky_trail_02_diff_4k.jpg</uri>
+        </texture>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh> <uri>model://maps/media/valles_marineris.dae</uri></mesh>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
